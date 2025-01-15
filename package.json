@@ -7,16 +7,19 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "server": "serve -s build"
+    "server": "serve -s build",
+    "nanify": "node ./node_modules/nanify/fn/moveComponents.js"
   },
   "dependencies": {
     "@types/react": "^19.0.7",
     "@types/react-dom": "^19.0.3",
     "@types/react-router-dom": "^5.3.3",
+    "nanify": "^0.2.45",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-router-dom": "4.3.1",
     "react-scripts": "2.1.5",
+    "react-toastify": "^5.5.0",
     "serve": "^14.2.4",
     "typescript": "^5.7.3"
   },

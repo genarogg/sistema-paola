@@ -1,0 +1,13 @@
+
+.container-menu-tooltip {
+  ul {
+    li {
+      button {
+        color: $text-color-white;
+        &:hover {
+          color: $color-secondary !important;
+        }
+      }
+    }
+  }
+}

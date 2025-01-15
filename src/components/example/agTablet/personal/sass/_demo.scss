@@ -1,0 +1,23 @@
+
+.personal {
+    .container-input {
+
+        height: 40px;
+
+
+        .select {
+            @include width(200px);
+            height: 40px;
+
+            .css-b62m3t-container {
+                @include width(200px);
+                height: 40px;
+                background-color: transparent;
+            }
+        }
+    }
+
+
+
+
+}
