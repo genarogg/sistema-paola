@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css';
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
-import './global.css';
-import './bootstrap.css';
-import App from './components/App';
+function Home() {
+    return <p>Hola mundo</p>;
+}
 
-const container = document.getElementById('app');
+const App = () => {
+    return (
+        <BrowserRouter>
+            <Switch>
+                <Route exact path="/" component={Home} />
+            </Switch>
+        </BrowserRouter>
+    );
+}
 
-ReactDOM.render(<App />, container);
+ReactDOM.render(<App />, document.getElementById('app'));
