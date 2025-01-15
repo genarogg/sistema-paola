@@ -859,7 +859,10 @@ form {
             flex-direction: column;
     padding: 40px;
     padding-top: 30px;
-    width: 100%; }
+    width: 100%;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    background-color: #1c1c1c73; }
     .container-form-loki .login .text-recovery,
     .container-form-loki .register .text-recovery,
     .container-form-loki .left .text-recovery {
@@ -917,6 +920,9 @@ form {
     display: grid;
     gap: 30px;
     grid-template-columns: 1fr; }
+    .container-form-loki form .container-input span.holder {
+      -webkit-backdrop-filter: none;
+              backdrop-filter: none; }
 
 @-webkit-keyframes colorChange {
   0% {
@@ -933,3 +939,72 @@ form {
     border-color: #ffac32; }
   100% {
     border-color: #fff; } }
+.containerAll {
+  display: grid;
+  min-height: 100vh;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+  background-color: #fff;
+  background-image: url("/bg-home.jpg"); }
+  .containerAll > header {
+    background-color: #1c1c1c73;
+    border-bottom: 1px solid rgba(255, 172, 50, 0.5);
+    color: #fff;
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px); }
+    .containerAll > header .logo {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      font-size: 24px; }
+  .containerAll > main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .containerAll > footer {
+    background-color: #1c1c1c;
+    border-top: 1px solid rgba(255, 172, 50, 0.5);
+    color: #fff;
+    height: 60px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    background-color: #1c1c1c73; }
+    .containerAll > footer p {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      font-size: 20px; }
