@@ -1,6 +1,5 @@
 import React from 'react';
 import { $ } from "../../../../functions";
-import "./_btnLoki.scss";
 
 interface BtnLokiProps {
   onClick?: () => void;
@@ -13,7 +12,8 @@ const BtnLoki: React.FC<BtnLokiProps> = ({
 }) => {
 
   const active = () => {
-    $("btn-hamburguer-loki")?.classList.toggle("active");
+    // @ts-ignore
+    $("btn-hamburguer-loki").classList.toggle("active");
   }
 
   return (

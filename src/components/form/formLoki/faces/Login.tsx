@@ -42,7 +42,8 @@ const Login: React.FC<LoginProps> = ({ cardState, register, reset }) => {
     };
 
     const active = () => {
-        $("btnBack")?.classList.add("active");
+        //@ts-ignore
+        $("btnBack").classList.add("active");
 
         const register = $("register");
 

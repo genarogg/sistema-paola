@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import "./sass/_resetPassword.scss"
+
 
 import { $ } from "../../../../functions";
 import { Input } from "../../../nano";
@@ -33,7 +33,7 @@ const ResetPassWord: React.FC<ResetPassWordProps> = ({ cardState }) => {
         setTimeout(() => {
             //@ts-ignore
             // eslint-disable-next-line no-unused-expressions
-            $("btnBack")?.classList.remove("active");
+            $("btnBack").classList.remove("active");
 
             const register = $("register");
 

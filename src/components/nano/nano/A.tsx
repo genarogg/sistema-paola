@@ -1,11 +1,9 @@
-"use client";
-
 import React from 'react';
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 interface AProps {
   href: string;
-  type?: "btn" | "mailto" | "a" | "push";
+  type?: "btn" | "mailto" | "a" ;
   children?: React.ReactNode;
   className?: string;
   style?: React.CSSProperties;
@@ -13,7 +11,6 @@ interface AProps {
 }
 
 const A: React.FC<AProps> = ({ href, type, children, className = " ", onClick, style }) => {
-  const history = useHistory();
 
   switch (type) {
     case undefined:
@@ -34,9 +31,7 @@ const A: React.FC<AProps> = ({ href, type, children, className = " ", onClick, s
           {children}
         </a>
       );
-    case "push":
-      history.push(href);
-      return null;
+    
     default:
       return null;
   }

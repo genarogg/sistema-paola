@@ -1,5 +1,5 @@
 import React from 'react'
-import "./_btnNormalBasic.scss"
+
 
 interface BtnNormalBasicProps {
     children: React.ReactNode;

@@ -1,7 +1,7 @@
 import React from "react";
 
 import BtnNormalBasic from "../../../../btns/basic/btnNormalBasic/index";
-import { URL_BACKEND } from "../../../../../../env";
+import { URL_BACKEND } from "../../../../../env";
 import { Icon,notify } from "../../../../nano"
 
 import { MdAddCircleOutline } from "react-icons/md"

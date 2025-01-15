@@ -9,6 +9,13 @@ import Home from './components/views/home/Home';
 // import "./_headBtn.scss"
 // import "./sass/_myAgGridReact.scss"
 // import "./sass/_demo.scss"
+// import "./_btnNormalBasic.scss"
+// import "./_btnLoki.scss";
+// import "./_btnSubmitBasic.scss"
+// import "./faces/sass/_styleGeneral.scss"
+// import "./sass/_demo.scss"
+// import "./_btnText.scss"
+// import "./sass/_resetPassword.scss"
 
 const App = () => {
     return (

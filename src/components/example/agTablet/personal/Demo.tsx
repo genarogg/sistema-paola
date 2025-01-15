@@ -1,8 +1,8 @@
 'use client'
 import React, { useState, useEffect } from 'react'
-import { URL_BACKEND } from '../../../../../env'
+import { URL_BACKEND } from '../../../../env'
 
-// import "./sass/_demo.scss"
+
 
 import { AgLayout, AgSearchInput, AgTabletContainer } from '../../../tablet'
 

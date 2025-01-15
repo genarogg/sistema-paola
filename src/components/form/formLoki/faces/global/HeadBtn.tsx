@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { $ } from "../../../../../functions";
 import BtnText from "../../../../btns/basic/btnText";
 
@@ -9,14 +11,15 @@ interface HeadBtnProps {
 
 const HeadBtn: React.FC<HeadBtnProps> = ({ cardState, register }) => {
     const btnActive = () => {
+        //@ts-ignore
         // eslint-disable-next-line no-unused-expressions
-        $("containerFormLoki")?.classList.add("active");
+        $("containerFormLoki").classList.add("active");
 
         //quita la clase active despues de 3 segundos
         setTimeout(() => {
-            
+               //@ts-ignore
             // eslint-disable-next-line no-unused-expressions
-            $("containerFormLoki")?.classList.remove("active");
+            $("containerFormLoki").classList.remove("active");
         }, 1000);
     };
 

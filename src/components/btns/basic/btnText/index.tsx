@@ -1,5 +1,4 @@
 import React from 'react'
-import "./_btnText.scss"
 
 interface BtnTextProps {
   children: React.ReactNode;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import "./_btnSubmitBasic.scss"
-// import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import { RECAPTCHA_KEY, URL_BACKEND } from "../../../../../../env";
 
-import { notify, A } from "../../../../nano"
+// import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import {  URL_BACKEND } from "../../../../../env";
+
+import { notify } from "../../../../nano"
 
 interface BtnSubmitBasicProps<T> {
   children: React.ReactNode;
@@ -60,7 +60,7 @@ const BtnSubmitBasic = <T,>({
         notify({ type: "success", message: data.message })
 
         //redireccionar el usuario con el api de nextjs
-        A({ type: "push", href: push })
+       
       })
       .catch((error) => console.error(error)
       ).finally(() => setLoading(false));
