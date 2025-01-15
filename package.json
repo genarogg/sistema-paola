@@ -2,23 +2,23 @@
   "name": "platzi-badges",
   "version": "0.1.0",
   "private": true,
-
   "scripts": {
     "dev": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
-
+    "eject": "react-scripts eject",
+    "server": "serve -s build"
   },
   "dependencies": {
- 
+    "@types/react": "^19.0.7",
+    "@types/react-dom": "^19.0.3",
+    "@types/react-router-dom": "^5.3.3",
     "react": "16.8.3",
     "react-dom": "16.8.3",
     "react-router-dom": "4.3.1",
-    "react-scripts": "2.1.5"
-  },
-  "devDependencies": {
-
+    "react-scripts": "2.1.5",
+    "serve": "^14.2.4",
+    "typescript": "^5.7.3"
   },
   "eslintConfig": {
     "extends": "react-app"

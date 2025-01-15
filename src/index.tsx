@@ -16,4 +16,5 @@ const App = () => {
     );
 }
 
+//@ts-ignore
 ReactDOM.render(<App />, document.getElementById('app'));
