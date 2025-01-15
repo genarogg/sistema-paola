@@ -1,0 +1,30 @@
+{
+  "badges": [
+    {
+      "firstName": "Genaro",
+      "lastName": "Gonzalez",
+      "email": "gena_gonzalez15@hotmail.com",
+      "jobTitle": "Dev Frontend",
+      "twitter": "gnarogg",
+      "id": "2MdUhIR"
+    },
+    {
+      "id": "4bbb7f45-e0be-4b7f-ab7c-101b3ecb2d04",
+      "firstName": "Anaili",
+      "lastName": "Ramirez",
+      "email": "anailiramirez@yahoo.com",
+      "jobTitle": "Programadora",
+      "twitter": "anailigaby",
+      "avatarUrl": "https://www.gravatar.com/avatar/eec9b2ede8a775989ff71b5308ff52d7?d=identicon"
+    },
+    {
+      "id": "052e04c9-6386-400c-8794-c1ac8f794a75",
+      "firstName": "Pamela",
+      "lastName": "Ribera",
+      "email": "pam@gmail.com",
+      "jobTitle": "Marketing ",
+      "twitter": "pamelaribera",
+      "avatarUrl": "https://www.gravatar.com/avatar/9ffc47916a084028d7a6436531077852?d=identicon"
+    }
+  ]
+}

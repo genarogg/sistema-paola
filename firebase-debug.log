@@ -1,0 +1,32 @@
+[debug] [2020-02-26T07:18:39.162Z] ----------------------------------------------------------------------
+[debug] [2020-02-26T07:18:39.182Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2020-02-26T07:18:39.182Z] CLI Version:   7.13.1
+[debug] [2020-02-26T07:18:39.183Z] Platform:      win32
+[debug] [2020-02-26T07:18:39.183Z] Node Version:  v13.1.0
+[debug] [2020-02-26T07:18:39.245Z] Time:          Wed Feb 26 2020 03:18:39 GMT-0400 (hora de Venezuela)
+[debug] [2020-02-26T07:18:39.245Z] ----------------------------------------------------------------------
+[debug] [2020-02-26T07:18:39.245Z] 
+[debug] [2020-02-26T07:18:39.342Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-26T07:18:39.344Z] > authorizing via signed-in user
+[debug] [2020-02-26T07:18:39.345Z] [iam] checking project platzi-badges-6d4d5 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-02-26T07:18:39.361Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/platzi-badges-6d4d5:testIamPermissions  
+
+[debug] [2020-02-26T07:19:08.813Z] [iam] error while checking permissions, command may fail: FirebaseError: Server Error. connect ETIMEDOUT 172.217.28.106:443
+[debug] [2020-02-26T07:19:08.818Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/platzi-badges-6d4d5  
+ 
+[debug] [2020-02-26T07:19:20.830Z] Server Error. getaddrinfo ENOTFOUND firebase.googleapis.com
+[debug] [2020-02-26T07:19:20.838Z] FirebaseError: Server Error. getaddrinfo ENOTFOUND firebase.googleapis.com
+    at Request._callback (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\lib\api.js:30:31)
+    at self.callback (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:185:22)
+    at Request.emit (events.js:210:5)
+    at Request.EventEmitter.emit (domain.js:478:20)
+    at Request.onRequestError (C:\Users\pc\AppData\Roaming\npm\node_modules\firebase-tools\node_modules\request\request.js:877:8)
+    at ClientRequest.emit (events.js:215:7)
+    at ClientRequest.EventEmitter.emit (domain.js:478:20)
+    at TLSSocket.socketErrorListener (_http_client.js:407:9)
+    at TLSSocket.emit (events.js:210:5)
+    at TLSSocket.EventEmitter.emit (domain.js:478:20)
+    at emitErrorNT (internal/streams/destroy.js:84:8)
+    at processTicksAndRejections (internal/process/task_queues.js:80:21)
+[error] 
+[error] Error: Failed to get Firebase project platzi-badges-6d4d5. Please make sure the project exists and your account has permission to access it.
