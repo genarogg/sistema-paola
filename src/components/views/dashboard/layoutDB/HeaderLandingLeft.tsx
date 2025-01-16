@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 
-import { FaEnvelopeOpenText, FaCommentDots, FaLightbulb } from "react-icons/fa";
+import { FaEnvelopeOpenText, FaLightbulb } from "react-icons/fa";
 import { GoFileDirectoryFill } from "react-icons/go";
 import { FaHandHoldingDollar } from "react-icons/fa6";
 import { TiHome } from "react-icons/ti";
-
+import { AiTwotoneAppstore } from "react-icons/ai";
+import { IoMdExit } from "react-icons/io";
+import { BsBuildings } from "react-icons/bs";
+import { FaUserAlt } from "react-icons/fa";
+import { IoStatsChart } from "react-icons/io5";
+import { MdForward5 } from "react-icons/md";
 import BtnLoki from "../../../btns/hamburguesa/btnLoki";
 import { A } from "../../../nano";
 
@@ -15,12 +20,13 @@ interface HeaderLandingLeftProps { }
 // Definir los elementos del header
 const home = { href: "#", logo: "/marca/logo.svg", alt: "Logo" };
 const menuItems = [
-  { href: "/", label: "Inicio", icon: <TiHome /> },
-  { href: "#quienes-somos", label: "Quiénes Somos", icon: <FaCommentDots /> },
-  { href: "#servicios", label: "Servicios", icon: <FaLightbulb /> },
-  { href: "#proyectos", label: "Proyectos", icon: <GoFileDirectoryFill /> },
-  { href: "#precios", label: "Precios", icon: <FaHandHoldingDollar /> },
-  { href: "#contacto", label: "Contacto", icon: <FaEnvelopeOpenText /> },
+  { href: "/dasboard", label: "Inicio", icon: <TiHome /> },
+  { href: "/dasboard/bienes", label: "bienes", icon: <AiTwotoneAppstore /> },
+  { href: "/dasboard/departamentos", label: "departamentos", icon: <BsBuildings /> },
+  { href: "/dasboard/estadisticas", label: "estadisticas", icon: <IoStatsChart /> },
+  { href: "/dasboard/bitacora", label: "bitacora", icon: <MdForward5 /> },
+  { href: "/dasboard/usuario", label: "usuario", icon: <FaUserAlt /> },
+  { href: "/", label: "salir", icon: <IoMdExit /> },
 ];
 
 const HeaderLandingLeft: React.FC<HeaderLandingLeftProps> = () => {

@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./sass/style.css"
 import Home from './components/views/home/Home';
-import Dashboard from './components/views/dashboard/DashBoard';
+import Dashboard from './components/views/dashboard/home/DashBoard';
 
 // import "./sass/_actionCell.scss"
 // import "./_btnRowCircle.scss";

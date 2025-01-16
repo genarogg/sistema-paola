@@ -13,10 +13,10 @@
   }
 
   .desktop {
-    background-color: rgba($color-primary, 0.3);
-    background-color: $color-quaternary;
-    backdrop-filter: blur(10px);
-    border-bottom: $border;
+    // background-color: rgba($color-primary, 0.3);
+    // background-color: $color-quaternary;
+    // backdrop-filter: blur(10px);
+    // border-bottom: $border;
 
     display: flex;
     justify-content: space-between;
@@ -27,13 +27,17 @@
 
     padding: 0 30px;
     width: 100%;
-    
+
     &.scrolled {
       padding: 0 15px;
       height: 65px;
 
       .container-logo {
+        font-size: 24px;
+
+        // font-weight: 500;
         a {
+
           img,
           svg {
             width: 170px;
@@ -53,6 +57,14 @@
         }
       }
     }
+
+    .container-logo {
+      font-size: 18px;
+
+      // font-weight: 500;
+     
+    }
+
   }
 
   .btn-desktop {
@@ -64,6 +76,7 @@
   .header.landing-left {
     .desktop {
       height: 85px;
+
       &.scrolled {
         height: 60px;
       }
@@ -81,6 +94,7 @@
 
         .container-logo {
           a {
+
             img,
             svg {
               width: 130px;
@@ -123,6 +137,7 @@
         justify-items: center;
       }
     }
+
     .container-nav {
       order: 1;
 
