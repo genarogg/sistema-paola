@@ -1,0 +1,140 @@
+.wrapper {
+  min-height: 110vh;
+  min-height: 110dvh;
+}
+
+.header.landing-left {
+  height: 90px;
+  // position: fixed;
+  top: 0;
+
+  * {
+    transition: $transition;
+  }
+
+  .desktop {
+    background-color: rgba($color-primary, 0.3);
+    background-color: $color-quaternary;
+    backdrop-filter: blur(10px);
+    border-bottom: $border;
+
+    display: flex;
+    justify-content: space-between;
+    height: 90px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 30px;
+    width: 100%;
+    
+    &.scrolled {
+      padding: 0 15px;
+      height: 65px;
+
+      .container-logo {
+        a {
+          img,
+          svg {
+            width: 170px;
+          }
+        }
+      }
+
+      .container-nav {
+        nav {
+          ul {
+            li {
+              .container-icono {
+                margin: 0 5px 0 15px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .btn-desktop {
+    display: none;
+  }
+}
+
+@include max-width(1500px) {
+  .header.landing-left {
+    .desktop {
+      height: 85px;
+      &.scrolled {
+        height: 60px;
+      }
+    }
+  }
+}
+
+@include max-width(1200px) {
+  .header.landing-left {
+    .desktop {
+      height: 75px;
+
+      &.scrolled {
+        height: 55px;
+
+        .container-logo {
+          a {
+            img,
+            svg {
+              width: 130px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include max-width(1000px) {
+  .header.landing-left {
+    .desktop {
+      height: 55px;
+      padding: 0 15px;
+    }
+  }
+}
+
+@include max-width(950px) {
+  .header.landing-left {
+    .desktop {
+      .btn-desktop {
+        display: flex;
+      }
+    }
+  }
+}
+
+@include max-width(500px) {
+  .header.landing-left {
+    .desktop {
+      grid-template-columns: 2fr 8fr 2fr;
+      justify-items: center;
+      display: grid;
+
+      .container-logo {
+        order: 2;
+        justify-items: center;
+      }
+    }
+    .container-nav {
+      order: 1;
+
+      &.nav-xs {
+        left: -100%;
+        border-left: none;
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+
+        &.active {
+          left: 0;
+        }
+      }
+    }
+  }
+}

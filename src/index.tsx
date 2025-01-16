@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./sass/style.css"
 import Home from './components/views/home/Home';
+import Dashboard from './components/views/dashboard/DashBoard';
 
 // import "./sass/_actionCell.scss"
 // import "./_btnRowCircle.scss";
@@ -22,6 +23,7 @@ const App = () => {
         <BrowserRouter>
             <Switch>
                 <Route exact path="/" component={Home} />
+                <Route exact path="/dashboard" component={Dashboard} />
             </Switch>
         </BrowserRouter>
     );
