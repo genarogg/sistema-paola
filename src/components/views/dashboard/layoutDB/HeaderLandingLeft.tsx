@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
-import { FaEnvelopeOpenText, FaLightbulb } from "react-icons/fa";
-import { GoFileDirectoryFill } from "react-icons/go";
-import { FaHandHoldingDollar } from "react-icons/fa6";
-import { TiHome } from "react-icons/ti";
+
+import { GoHome } from "react-icons/go"
 import { AiTwotoneAppstore } from "react-icons/ai";
 import { IoMdExit } from "react-icons/io";
 import { BsBuildings } from "react-icons/bs";
@@ -20,7 +18,7 @@ interface HeaderLandingLeftProps { }
 // Definir los elementos del header
 const home = { href: "#", logo: "/marca/logo.svg", alt: "Logo" };
 const menuItems = [
-  { href: "/dasboard", label: "Inicio", icon: <TiHome /> },
+  { href: "/dasboard", label: "Inicio", icon: <GoHome /> },
   { href: "/dasboard/bienes", label: "bienes", icon: <AiTwotoneAppstore /> },
   { href: "/dasboard/departamentos", label: "departamentos", icon: <BsBuildings /> },
   { href: "/dasboard/estadisticas", label: "estadisticas", icon: <IoStatsChart /> },
