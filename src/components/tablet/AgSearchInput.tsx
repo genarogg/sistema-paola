@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React from 'react';
 import { FaSearchengin } from 'react-icons/fa';
 
 import { Input } from "../nano"
