@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 // import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import {  URL_BACKEND } from "../../../../../env";
+import { URL_BACKEND } from "../../../../../env";
 
 import { notify } from "../../../../nano"
 
@@ -15,14 +15,14 @@ interface BtnSubmitBasicProps<T> {
   push: string
 }
 
-const BtnSubmitBasic = <T,>({
+const BtnSubmitBasic = ({
   children,
   className = "",
   id = "",
   formData,
   endpoint,
   push = "/"
-}: BtnSubmitBasicProps<T>) => {
+}: any) => {
 
   const [loading, setLoading] = useState(false);
   // const { executeRecaptcha } = useGoogleReCaptcha();
@@ -31,14 +31,13 @@ const BtnSubmitBasic = <T,>({
 
   const handleSubmit = async () => {
 
-    // if (RECAPTCHA_KEY && executeRecaptcha) {
-    //   token = await executeRecaptcha("submit");
-    // }
-
+  
     const data = {
-      ...formData,
+      ...formData.current,
       token,
     }
+
+    console.log(data)
 
     fetch(`${URL_BACKEND}/auth${endpoint}`, {
       method: "POST",
@@ -60,7 +59,7 @@ const BtnSubmitBasic = <T,>({
         notify({ type: "success", message: data.message })
 
         //redireccionar el usuario con el api de nextjs
-       
+
       })
       .catch((error) => console.error(error)
       ).finally(() => setLoading(false));

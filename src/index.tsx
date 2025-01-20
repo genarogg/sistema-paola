@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import "./sass/style.css"
+import 'react-toastify/dist/ReactToastify.css';
 import Home from './components/views/home/Home';
 import Dashboard from './components/views/dashboard/home/DashBoard';
 import Bienes from './components/views/dashboard/bienes/Bienes';

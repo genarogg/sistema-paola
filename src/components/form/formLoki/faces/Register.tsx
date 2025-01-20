@@ -21,19 +21,26 @@ const Register: React.FC<RegisterProps> = ({ cardState }) => {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        inputRef.current = { ...inputRef.current, [name]: value };
+        inputRef.current = {
+            ...inputRef.current,
+            [name]: value
+        };
     };
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(inputRef.current);
+        console.log("inputRef");
+        console.log(inputRef);
     };
 
     return (
 
         <div className="register right" id="register">
             <HeadBtn cardState={cardState} register={true} />
-            <form onSubmit={(e) => { e.preventDefault() }}>
+            <form onSubmit={(e) => {
+                e.preventDefault();
+                handleSubmit(e)
+            }}>
                 <Input
                     type="text"
                     name="name"
@@ -68,14 +75,14 @@ const Register: React.FC<RegisterProps> = ({ cardState }) => {
                 />
 
                 <BtnSubmitBasic
-                    formData={{
-                        data: inputRef.current,
-                    }}
+                    formData={inputRef}
                     endpoint="/register"
                     push="/"
                 >
                     Registrarse
                 </BtnSubmitBasic>
+
+                {/* <button type='submit'>enviar</button> */}
 
                 <div className="text-recovery">
                     <span>
