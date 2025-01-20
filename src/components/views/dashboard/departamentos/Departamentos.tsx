@@ -23,7 +23,7 @@ const Demo: React.FC<DemoProps> = () => {
     const Btns = () => {
         return (
             <>
-                <A href="/dashboard/bienes/agregar">
+                <A href="/dashboard/departamentos/agregar">
                     <button>agregar</button>
                 </A>
 
@@ -31,18 +31,6 @@ const Demo: React.FC<DemoProps> = () => {
         );
     };
 
-    const totalCantidad = data.reduce((total, empleado) => {
-        return total + empleado.cantidad;
-    }, 0);
-
-
-    const totalDesincorporaciones = data.reduce((total, empleado) => {
-        return total + (empleado.desincorporaciones || 0);
-    }, 0);
-
-    const totalIncorporaciones = data.reduce((total, empleado) => {
-        return total + (empleado.incorporaciones || 0);
-    }, 0);
 
     useEffect(() => {
         fetch(`${URL_BACKEND}/empleado/get-all`)
@@ -66,18 +54,9 @@ const Demo: React.FC<DemoProps> = () => {
                 />
                 <div className="container-footer">
                     <div className="container-bienes-totales">
-                        <h3>Bienes Totales: {totalCantidad}</h3>
+                        <h3>Bienes Totales: totalCantidad</h3>
                     </div>
-                    <div className="total-en-bs-incorporaciones">
-                        <h3>
-                            Total en Bs en Desincorporaciones: {totalDesincorporaciones}
-                        </h3>
-                    </div>
-                    <div className="total-en-bs-desIncorporaciones">
-                        <h3>
-                            Total en Bs en incorporaciones: {totalIncorporaciones}
-                        </h3>
-                    </div>
+                   
                 </div>
             </AgLayout>
         </Layout >

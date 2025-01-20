@@ -5,7 +5,8 @@ import "./sass/style.css"
 import Home from './components/views/home/Home';
 import Dashboard from './components/views/dashboard/home/DashBoard';
 import Bienes from './components/views/dashboard/bienes/Bienes';
-
+import Departamentos from './components/views/dashboard/departamentos/Departamentos';
+import AggDepartamento from './components/views/dashboard/departamentos/agg/Agg';
 
 const App = () => {
     return (
@@ -14,6 +15,8 @@ const App = () => {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/dashboard/bienes" component={Bienes} />
+                <Route exact path="/dashboard/departamentos" component={Departamentos} />
+                <Route exact path="/dashboard/departamentos/agregar" component={AggDepartamento} />
             </Switch>
         </BrowserRouter>
     );
