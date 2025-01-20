@@ -36,7 +36,7 @@ const Demo: React.FC<DemoProps> = () => {
 
     return (
         <AgLayout
-            titulo="Demo"
+            titulo="Bienes"
             btns={<Btns />}
             search={<AgSearchInput setQuickFilterText={setQuickFilterText} />}
         >

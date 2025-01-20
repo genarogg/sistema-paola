@@ -1,6 +1,3 @@
-
-
-
 .layout-tablet-container {
   .conteiner {
     .container-header {
@@ -23,6 +20,28 @@
       }
 
       .btns {}
+    }
+
+    .container-footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 20px;
+      margin: 10px 0;
+      align-items: center;
+      border-radius: 10px;
+      background-color: #0090ea;
+      -webkit-backdrop-filter: blur(10px);
+      backdrop-filter: blur(10px);
+
+
+      color: #fff;
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: lowercase;
+
+      h3 {
+        font-weight: 500;
+      }
     }
   }
 }

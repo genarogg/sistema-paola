@@ -18,12 +18,12 @@ interface HeaderLandingLeftProps { }
 // Definir los elementos del header
 const home = { href: "#", logo: "/marca/logo.svg", alt: "Logo" };
 const menuItems = [
-  { href: "/dasboard", label: "Inicio", icon: <GoHome /> },
-  { href: "/dasboard/bienes", label: "bienes", icon: <AiTwotoneAppstore /> },
-  { href: "/dasboard/departamentos", label: "departamentos", icon: <BsBuildings /> },
-  { href: "/dasboard/estadisticas", label: "estadisticas", icon: <IoStatsChart /> },
-  { href: "/dasboard/bitacora", label: "bitacora", icon: <MdForward5 /> },
-  { href: "/dasboard/usuario", label: "usuario", icon: <FaUserAlt /> },
+  { href: "/dashboard", label: "Inicio", icon: <GoHome /> },
+  { href: "/dashboard/bienes", label: "bienes", icon: <AiTwotoneAppstore /> },
+  { href: "/dashboard/departamentos", label: "departamentos", icon: <BsBuildings /> },
+  { href: "/dashboard/estadisticas", label: "estadisticas", icon: <IoStatsChart /> },
+  { href: "/dashboard/bitacora", label: "bitacora", icon: <MdForward5 /> },
+  { href: "/dashboard/usuario", label: "usuario", icon: <FaUserAlt /> },
   { href: "/", label: "salir", icon: <IoMdExit /> },
 ];
 
