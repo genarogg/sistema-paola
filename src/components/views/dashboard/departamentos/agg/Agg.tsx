@@ -4,6 +4,9 @@ import { Input, } from "../../../../nano";
 import BtnSubmitBasic from '../../btnSubmitBasic';
 import Layout from '../../layoutDB/layout';
 
+import { MdOutlineClass } from "react-icons/md";
+import { SiOnlyoffice } from "react-icons/si";
+import { AiOutlineDeploymentUnit } from "react-icons/ai"
 
 interface AggProps { }
 
@@ -30,6 +33,7 @@ const Agg: React.FC<AggProps> = () => {
                 <h2>Agregar Departamento</h2>
                 <form onSubmit={handleSubmit}>
                     <Input
+                        icon={<MdOutlineClass />}
                         type="text"
                         name="clasificacion"
                         id="clasificacion"
@@ -38,6 +42,7 @@ const Agg: React.FC<AggProps> = () => {
                     />
 
                     <Input
+                        icon={<SiOnlyoffice />}
                         type="text"
                         name="departamento"
                         id="departamento"
@@ -46,6 +51,7 @@ const Agg: React.FC<AggProps> = () => {
                     />
 
                     <Input
+                        icon={<AiOutlineDeploymentUnit />}
                         type="text"
                         name="dependencia"
                         id="dependencia"

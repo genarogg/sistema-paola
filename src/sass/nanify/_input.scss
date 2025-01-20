@@ -30,7 +30,7 @@ form {
         span.holder {
             font-size: 14px;
             font-weight: 600;
-            top: 0;
+            top: -15px;
         }
     }
 
@@ -71,7 +71,7 @@ form {
 
     span.holder {
         background-color: transparent;
-        backdrop-filter: $blur;
+        
         color: $color-secondary;
         font-size: 18px;
         left: 40px;
@@ -86,7 +86,7 @@ form {
         &.has-content {
             font-size: 15px;
             font-weight: 600;
-            top: 0 !important;
+            top: -15px;
         }
     }
 
