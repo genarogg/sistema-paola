@@ -31,13 +31,22 @@ const BtnSubmitBasic = ({
 
   const handleSubmit = async () => {
 
-  
+
     const data = {
       ...formData.current,
       token,
     }
 
-    console.log(data)
+    console.log(data);
+
+    if (data.confirmPassword) {
+      if (data.password !== data.confirmPassword) {
+        notify({ type: "error", message: "Las contraseñas no coinciden" });
+        setLoading(false)
+        return;
+      }
+    }
+
 
     fetch(`${URL_BACKEND}/auth${endpoint}`, {
       method: "POST",
@@ -53,6 +62,8 @@ const BtnSubmitBasic = ({
           notify({ type: "error", message: data.message })
           return;
         }
+
+        console.log(data);
 
         localStorage.setItem("token", data.token);
 

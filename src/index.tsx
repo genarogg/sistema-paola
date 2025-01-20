@@ -8,17 +8,20 @@ import Dashboard from './components/views/dashboard/home/DashBoard';
 import Bienes from './components/views/dashboard/bienes/Bienes';
 import Departamentos from './components/views/dashboard/departamentos/Departamentos';
 import AggDepartamento from './components/views/dashboard/departamentos/agg/Agg';
+import { AuthProvider } from './components/redux/AuthContext';
 
 const App = () => {
     return (
         <BrowserRouter>
-            <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/dashboard" component={Dashboard} />
-                <Route exact path="/dashboard/bienes" component={Bienes} />
-                <Route exact path="/dashboard/departamentos" component={Departamentos} />
-                <Route exact path="/dashboard/departamentos/agregar" component={AggDepartamento} />
-            </Switch>
+            <AuthProvider>
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path="/dashboard" component={Dashboard} />
+                    <Route exact path="/dashboard/bienes" component={Bienes} />
+                    <Route exact path="/dashboard/departamentos" component={Departamentos} />
+                    <Route exact path="/dashboard/departamentos/agregar" component={AggDepartamento} />
+                </Switch>
+            </AuthProvider>
         </BrowserRouter>
     );
 }

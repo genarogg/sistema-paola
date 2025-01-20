@@ -76,7 +76,7 @@ const Login: React.FC<LoginProps> = ({ cardState, register, reset }) => {
 
                     <Input
                         type="password"
-                        name="passwordLogin"
+                        name="password"
                         placeholder={"Contraseña"}
                         icon={<MdLock />}
                         onChange={handleChange}
@@ -88,10 +88,7 @@ const Login: React.FC<LoginProps> = ({ cardState, register, reset }) => {
                     />
 
                     <BtnSubmitBasic
-                        formData={{
-                            data: inputRef.current,
-                            check: isChecked
-                        }}
+                        formData={inputRef}
                         endpoint="/login"
                         push="/"
                     >
