@@ -14,7 +14,7 @@ const Dashboard: React.FC<DashboardProps> = () => {
     const Element = ({ titulo }: any) => {
         return (
             <BtnNormalBasic className={`elemento ${titulo}`}>
-                <A href={`dashboard/${titulo}`}  >
+                <A href={`/dashboard/${titulo}`}  >
                     <div className="container-img">
                         <img src={`/undraw/${titulo}.svg`} alt={titulo} />
                     </div>

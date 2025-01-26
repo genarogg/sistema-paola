@@ -1,4 +1,5 @@
 import React, { createContext, useReducer, useEffect, ReactNode } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { URL_BACKEND } from '../../env';
 
 interface AuthState {
@@ -49,11 +50,16 @@ interface AuthProviderProps {
 
 const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     const [state, dispatch] = useReducer(authReducer, initialState);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const token = localStorage.getItem('token');
 
-        if (token) {
+        if (!token) {
+            navigate('/'); 
+            return dispatch({ type: 'LOGOUT' });
+
+        }
             // Verifica el token con el backend
             fetch(`${URL_BACKEND}/auth/obtenerUsuario`, {
                 method: 'POST',
@@ -64,20 +70,22 @@ const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
             })
                 .then(response => response.json())
                 .then(data => {
-                    
+                  
                     if (data.type === 'success') {
-      
                         dispatch({ type: 'LOGIN', payload: token });
+                        navigate('/dashboard')
+                        
                     } else {
                         localStorage.removeItem('token');
                         dispatch({ type: 'LOGOUT' });
+                        navigate('/'); 
                     }
                 })
                 .catch(() => {
                     localStorage.removeItem('token');
                     dispatch({ type: 'LOGOUT' });
                 });
-        }
+
     }, []);
 
     return (

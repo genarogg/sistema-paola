@@ -1,19 +1,8 @@
-import React, { useState } from 'react'
-
-// import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
-import { URL_BACKEND } from "../../../../../env";
-
-import { notify } from "../../../../nano"
-
-interface BtnSubmitBasicProps<T> {
-  children: React.ReactNode;
-  className?: string;
-  id?: string;
-  disable?: boolean;
-  formData: T;
-  endpoint: string;
-  push: string
-}
+import React, { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../../../redux/AuthContext';
+import { URL_BACKEND } from '../../../../../env';
+import { notify } from '../../../../nano';
 
 const BtnSubmitBasic = ({
   children,
@@ -23,30 +12,25 @@ const BtnSubmitBasic = ({
   endpoint,
   push = "/"
 }: any) => {
-
   const [loading, setLoading] = useState(false);
-  // const { executeRecaptcha } = useGoogleReCaptcha();
+  const { dispatch } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   let token = "";
 
   const handleSubmit = async () => {
-
-
     const data = {
       ...formData.current,
       token,
-    }
-
-    console.log(data);
+    };
 
     if (data.confirmPassword) {
       if (data.password !== data.confirmPassword) {
         notify({ type: "error", message: "Las contraseñas no coinciden" });
-        setLoading(false)
+        setLoading(false);
         return;
       }
     }
-
 
     fetch(`${URL_BACKEND}/auth${endpoint}`, {
       method: "POST",
@@ -57,24 +41,24 @@ const BtnSubmitBasic = ({
     })
       .then((response) => response.json())
       .then((data) => {
-
         if (data.error) {
-          notify({ type: "error", message: data.message })
+          notify({ type: "error", message: data.message });
           return;
         }
 
         console.log(data);
 
+  
+
         localStorage.setItem("token", data.token);
+        dispatch({ type: 'LOGIN', payload: data.token });
+        notify({ type: "success", message: data.message });
 
-        notify({ type: "success", message: data.message })
-
-        //redireccionar el usuario con el api de nextjs
-
+        navigate('/dashboard');
       })
-      .catch((error) => console.error(error)
-      ).finally(() => setLoading(false));
-  }
+      .catch((error) => console.error(error))
+      .finally(() => setLoading(false));
+  };
 
   return (
     <div className={`btn-submit-basic ${className}`} id={id}>

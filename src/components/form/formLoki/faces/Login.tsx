@@ -37,8 +37,6 @@ const Login: React.FC<LoginProps> = ({ cardState, register, reset }) => {
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-
-        console.log(inputRef.current);
     };
 
     const active = () => {

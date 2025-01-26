@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import "./sass/style.css"
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import "./sass/style.css";
 import 'react-toastify/dist/ReactToastify.css';
 import Home from './components/views/home/Home';
 import Dashboard from './components/views/dashboard/home/DashBoard';
@@ -14,13 +14,14 @@ const App = () => {
     return (
         <BrowserRouter>
             <AuthProvider>
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route exact path="/dashboard" component={Dashboard} />
-                    <Route exact path="/dashboard/bienes" component={Bienes} />
-                    <Route exact path="/dashboard/departamentos" component={Departamentos} />
-                    <Route exact path="/dashboard/departamentos/agregar" component={AggDepartamento} />
-                </Switch>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/dashboard" element={<Dashboard />} />
+                    <Route path="/dashboard/bienes" element={<Bienes />} />
+                    <Route path="/dashboard/departamentos" element={<Departamentos />} />
+                    <Route path="/dashboard/departamentos/agregar" element={<AggDepartamento />} />
+                    <Route path="*" element={<Home />} />
+                </Routes>
             </AuthProvider>
         </BrowserRouter>
     );
