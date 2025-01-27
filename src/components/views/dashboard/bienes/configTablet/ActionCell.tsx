@@ -11,6 +11,7 @@ import { MdAddCircleOutline } from "react-icons/md"
 import { MdOutlineChromeReaderMode } from "react-icons/md";
 import { GrDocumentUpdate } from "react-icons/gr";
 import { MdOutlineDelete } from "react-icons/md";
+import { MdMoveDown } from "react-icons/md";
 
 interface ActionsCellRendererProps {
   data: any;
@@ -46,16 +47,16 @@ const ActionsCellRenderer: React.FC<ActionsCellRendererProps> = ({ data }) => {
 
   return (
     <div className="container-btn-tablet">
-      <BtnNormalBasic onClick={() => handleEdit(data.ci)}>
-        <Icon icon={<MdAddCircleOutline />} />
+      <BtnNormalBasic onClick={() => handleEdit(data.id)}>
+        <Icon icon={<MdMoveDown />} />
       </BtnNormalBasic>
-      <BtnNormalBasic onClick={() => handleEdit(data.ci)}>
+      <BtnNormalBasic onClick={() => handleEdit(data.id)}>
         <Icon icon={<MdOutlineChromeReaderMode />} />
       </BtnNormalBasic>
-      <BtnNormalBasic onClick={() => handleDelete(data.ci)}>
+      <BtnNormalBasic onClick={() => handleDelete(data.id)}>
         <Icon icon={<GrDocumentUpdate />} />
       </BtnNormalBasic>
-      <BtnNormalBasic onClick={() => handleDelete(data.ci)}>
+      <BtnNormalBasic onClick={() => handleDelete(data.id)}>
         <Icon icon={<MdOutlineDelete />} />
       </BtnNormalBasic>
     </div>
