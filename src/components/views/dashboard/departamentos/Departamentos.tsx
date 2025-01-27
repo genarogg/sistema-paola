@@ -33,7 +33,7 @@ const Demo: React.FC<DemoProps> = () => {
 
 
     useEffect(() => {
-        fetch(`${URL_BACKEND}/empleado/get-all`)
+        fetch(`${URL_BACKEND}/departamento/get`)
             .then((res) => res.json())
             .then((res) => {
                 setData(res.data);

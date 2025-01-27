@@ -6,6 +6,7 @@
     grid-template-rows: auto 1fr auto;
     background-color: #fff;
     background-image: url("/bg-home.jpg");
+    background-attachment: fixed;
 
     >header {
         background-color: #a7a7a773;

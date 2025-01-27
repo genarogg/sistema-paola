@@ -1,0 +1,30 @@
+.container-form{
+    width: 70vw;
+    max-width: 1110px;
+    border: 1px solid #fff;
+    padding: 20px 50px;
+    border-radius: 10px;
+    background-color: #fff2;
+    backdrop-filter: blur(10px);
+    
+    min-height: 70vh;
+
+    margin: 20px 0;
+    
+    h2{
+        margin-bottom: 30px;
+        color: #fff;
+        font-weight: 400;
+        text-align: center;
+    }
+    
+    .btn-submit-basic {
+       button{
+                 max-width: 100%;
+       }
+    }
+}
+
+// *{
+//     border: 1px solid red;
+// }

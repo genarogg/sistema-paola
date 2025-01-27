@@ -10,6 +10,8 @@ import Departamentos from './components/views/dashboard/departamentos/Departamen
 import AggDepartamento from './components/views/dashboard/departamentos/agg/Agg';
 import { AuthProvider } from './components/redux/AuthContext';
 
+import AggBienes from './components/views/dashboard/bienes/agg/Agg';
+
 const App = () => {
     return (
         <BrowserRouter>
@@ -18,6 +20,7 @@ const App = () => {
                     <Route path="/" element={<Home />} />
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/dashboard/bienes" element={<Bienes />} />
+                    <Route path="/dashboard/bienes/agregar" element={<AggBienes />} />
                     <Route path="/dashboard/departamentos" element={<Departamentos />} />
                     <Route path="/dashboard/departamentos/agregar" element={<AggDepartamento />} />
                     <Route path="*" element={<Home />} />

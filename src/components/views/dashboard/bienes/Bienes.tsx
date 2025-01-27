@@ -44,13 +44,14 @@ const Demo: React.FC<DemoProps> = () => {
         return total + (empleado.incorporaciones || 0);
     }, 0);
 
-    useEffect(() => {
-        fetch(`${URL_BACKEND}/empleado/get-all`)
-            .then((res) => res.json())
-            .then((res) => {
-                setData(res.data);
-            });
-    }, []);
+      useEffect(() => {
+           fetch(`${URL_BACKEND}/bienes/get`)
+               .then((res) => res.json())
+               .then((res) => {
+                   setData(res.data);
+               });
+       }, []);
+   
 
     return (
         <Layout>

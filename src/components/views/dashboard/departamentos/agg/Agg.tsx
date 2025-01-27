@@ -1,16 +1,21 @@
 'use client';
 import React, { useRef } from 'react';
-import { Input, } from "../../../../nano";
+import { Input, notify } from "../../../../nano";
 import BtnSubmitBasic from '../../btnSubmitBasic';
 import Layout from '../../layoutDB/layout';
+
+import { URL_BACKEND } from '../../../../../env';
 
 import { MdOutlineClass } from "react-icons/md";
 import { SiOnlyoffice } from "react-icons/si";
 import { AiOutlineDeploymentUnit } from "react-icons/ai"
 
+import { useNavigate } from 'react-router-dom';
+
 interface AggProps { }
 
 const Agg: React.FC<AggProps> = () => {
+        const navigate = useNavigate();
     const inputRef = useRef({
         clasificacion: "",
         departamento: "",
@@ -22,10 +27,37 @@ const Agg: React.FC<AggProps> = () => {
         inputRef.current = { ...inputRef.current, [name]: value };
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
+
+        const data = {
+            clasificacion: inputRef.current.clasificacion,
+            departamento: inputRef.current.departamento,
+            dependencia: inputRef.current.dependencia,
+        }
         console.log("Datos enviados:", inputRef.current);
         // Lógica para enviar los datos a un endpoint o procesarlos
+
+        const token = localStorage.getItem('token');
+
+        const response = await fetch(URL_BACKEND + '/departamento/create', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+            notify({ message: result.message, type: result.type });
+            navigate('/dashboard/departamentos');
+
+        } else {
+            notify({ message: result.message, type: result.type });
+        }
     };
     return (
         <Layout>
@@ -59,7 +91,9 @@ const Agg: React.FC<AggProps> = () => {
                         onChange={handleChange}
                     />
 
-                    <BtnSubmitBasic push="dashboard/departamentos" endpoint="departamento/agg" formData={inputRef}>Guardar</BtnSubmitBasic>
+                    <BtnSubmitBasic
+                        push="dashboard/departamentos" endpoint="departamento/agg"
+                        formData={inputRef}>Guardar</BtnSubmitBasic>
                 </form>
             </div>
         </Layout>
